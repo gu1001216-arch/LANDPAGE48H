@@ -789,7 +789,7 @@
     </footer>
 
     <!-- WhatsApp Button -->
-    <button class="whatsapp-button" id="whatsapp-btn" onclick="openWhatsApp()" title="Enviar mensagem via WhatsApp">
+    <button class="whatsapp-button pulse" id="whatsapp-btn" onclick="openWhatsApp()" title="Enviar mensagem via WhatsApp" style="display: flex;">
         💬
     </button>
 
@@ -797,17 +797,7 @@
         const phoneNumber = '5548984217984';
         const defaultMessage = 'Olá! Gostaria de saber mais sobre a criação do meu site em 48 horas.';
 
-        // Mostrar botão após 2 segundos
-        setTimeout(() => {
-            const btn = document.getElementById('whatsapp-btn');
-            if (btn) btn.style.display = 'flex';
-        }, 2000);
-
-        // Adicionar animação de pulse após 10 segundos
-        setTimeout(() => {
-            const btn = document.getElementById('whatsapp-btn');
-            if (btn) btn.classList.add('pulse');
-        }, 10000);
+        // Botão já está visível e piscando desde o carregamento
 
         function getCustomMessage() {
             const params = new URLSearchParams(window.location.search);
