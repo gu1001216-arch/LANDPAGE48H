@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crie seu site profissional em até 48 horas. Entrega rápida, design moderno e suporte completo. Solicite seu orçamento agora!">
+    <meta name="keywords" content="criação de sites, web design, landing page, desenvolvimento web, 48 horas">
+    <meta name="author" content="Venda Sites">
+    <meta property="og:title" content="Crie Seu Site em 48h - Entrega Rápida">
+    <meta property="og:description" content="Serviço profissional de criação de sites com entrega garantida em até 48 horas.">
+    <meta property="og:type" content="website">
+    <title>Landing Page Profissional - Entrega 48h</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e40af;
+            --primary-foreground: #ffffff;
+            --accent: #84cc16;
+            --accent-foreground: #1f2937;
+            --background: #ffffff;
+            --foreground: #1f2937;
+            --secondary: #f3f4f6;
+            --secondary-foreground: #374151;
+            --muted: #e5e7eb;
+            --muted-foreground: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.2; }
+        h2 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.2; }
+        h3 { font-size: clamp(1.5rem, 4vw, 2rem); }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--foreground);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        nav {
+            display: none;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+            }
+        }
+
+        nav a {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--foreground);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 5rem 0;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hero-content h1 {
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 .highlight {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .badge-icon {
+            font-size: 1.25rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .hero-image {
+            display: none;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+        }
+
+        @media (min-width: 1024px) {
+            .hero-image {
+                display: block;
+            }
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--secondary);
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--muted-foreground);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s;
+        }
+
+        .feature-card:nth-child(2) {
+            border-left-color: var(--accent);
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--muted-foreground);
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 5rem 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .process-step:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-step h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .form-group {
+                flex-direction: row;
+            }
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            ring: 2px solid var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            color: var(--muted-foreground);
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .whatsapp-cta {
+            background: #25d366;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .whatsapp-cta:hover {
+            background: #1fa857;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .trust-badge-label {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .footer-section p {
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--muted-foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s;
+        }
+
+        .footer-contact:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 50;
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .whatsapp-button.pulse {
+            animation: pulse-animation 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-animation {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .btn-primary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .whatsapp-cta {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">VS</div>
+                    <span>Venda Sites</span>
+                </div>
+                <nav>
+                    <a href="#process">Como Funciona</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    Solicitar Orçamento
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="grid-column: 1 / -1;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div class="hero-content fade-in">
+                    <h1>
+                        Seu Site em
+                        <span class="highlight">48 Horas</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Criação profissional de landing pages e websites com entrega garantida. Design moderno, otimizado para conversão.
+                    </p>
+
+                    <div class="badges">
+                        <div class="badge">
+                            <span class="badge-icon">⚡</span>
+                            <span>Entrega em 48h</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">✓</span>
+                            <span>Garantia de qualidade</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">💬</span>
+                            <span>Suporte 24/7</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                            Solicitar Orçamento →
+                        </button>
+                        <button class="btn btn-secondary" onclick="document.getElementById('process').scrollIntoView({behavior: 'smooth'})">
+                            Ver Como Funciona
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-image fade-in" style="animation-delay: 0.2s;">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/tgx7UTxO8qYOQUo4QnHuU1/sandbox/G5Z75OYQxJQf0yBTmz0iyV-img-1_1770691268000_na1fn_aGVyby1iYWNrZ3JvdW5k.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvdGd4N1VUeE84cVlPUVVvNFFuSHVVMS9zYW5kYm94L0c1Wjc1T1lReEpRZjB5QlRtejBpeVYtaW1nLTFfMTc3MDY5MTI2ODAwMF9uYTFmbl9hR1Z5YnkxaVlXTnJaM0p2ZFc1ay5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=fuwnlhasJJx9Mv5BzhvkgmWda97zThpcsQtHUoLTdoSYeh1XynPjtA8V1974AeBtouHnDNEL9j6kzv1ExTBLPrQMUdSIxqzvO-n7nOm2uWIb1vz7I5NoHJm9mNeRH5oznNB2Ni83Rtuh7eiCb7yZ1n7Betw6pJ-Gv-CsfEGMAy5EjGGZVNz6Zmw8RIjv6GhlsB3zZCUN2a74aLGU~YCE9S9jh-RZf~IeY32yff4I4vtx79RY98Y-QhgjZ2pwRohHIdVWsC3oNVkYgWyNFTmyxVMY3mJvx6ZuKDVqjDVD9jJ1rIt1LXY43pphhHByOKoHHOZPiEJyZooATkVVEoUAmA__" alt="Laptop exibindo website profissional">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por Que Escolher a Gente?</h2>
+                <p class="section-subtitle">
+                    Oferecemos soluções completas para sua presença digital com velocidade, qualidade e suporte excepcional.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Entrega em 48h</h3>
+                    <p>Seu site pronto em até 48 horas. Sem atrasos, sem desculpas. Entrega rápida e garantida.</p>
+                </div>
+                <div class="feature-card fade-in" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">✓</div>
+                    <h3>Qualidade Garantida</h3>
+                    <p>Design profissional, otimizado para conversão e responsivo em todos os dispositivos.</p>
+                </div>
+                <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">💬</div>
+                    <h3>Suporte Completo</h3>
+                    <p>Atendimento personalizado, revisões ilimitadas e suporte pós-entrega inclusos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Como Funciona</h2>
+                <p class="section-subtitle">
+                    Processo simples e direto. Do briefing até o lançamento em apenas 4 etapas.
+                </p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Briefing</h3>
+                    <p>Conversamos sobre suas necessidades, objetivos e visão para o site.</p>
+                </div>
+                <div class="process-step fade-in" style="animation-delay: 0.1s;">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Criamos um design moderno e profissional, otimizado para conversão.</p>
+                </div>
+                <div class="process-step fade-in" style="animation-delay: 0.2s;">
+                    <div class="step-number">3</div>
+                    <h3>Desenvolvimento</h3>
+                    <p>Desenvolvemos seu site com as melhores práticas de código e performance.</p>
+                </div>
+                <div class="process-step fade-in" style="animation-delay: 0.3s;">
+                    <div class="step-number">4</div>
+                    <h3>Lançamento</h3>
+                    <p>Testamos tudo e colocamos seu site no ar. Pronto para crescer!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para Começar?</h2>
+                <p class="cta-subtitle">
+                    Solicite seu orçamento agora e receba uma resposta em até 2 horas. Sem compromisso.
+                </p>
+
+                <form onsubmit="handleEmailSubmit(event)">
+                    <div class="form-group">
+                        <input type="email" placeholder="seu@email.com" id="email-input" required>
+                        <button type="submit" class="btn btn-primary">Enviar Orçamento</button>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">
+                        ✓ Resposta rápida • ✓ Sem spam • ✓ Orçamento personalizado
+                    </p>
+                </form>
+
+                <div class="divider">OU</div>
+
+                <button class="whatsapp-cta" onclick="openWhatsApp()">
+                    💬 Fale Conosco no WhatsApp
+                </button>
+                <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 0.75rem;">
+                    Clique e converse com nosso time agora mesmo
+                </p>
+
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="trust-badge-value">48h</div>
+                        <div class="trust-badge-label">Entrega Rápida</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-value">100%</div>
+                        <div class="trust-badge-label">Satisfação</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-value">24/7</div>
+                        <div class="trust-badge-label">Suporte</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Venda Sites</h3>
+                    <p>Criamos sites profissionais e landing pages com entrega em 48 horas. Qualidade garantida, suporte completo.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#process">Como Funciona</a></li>
+                        <li><a href="#contact">Solicitar Orçamento</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <a href="https://wa.me/5548984217984" class="footer-contact">
+                        💬 WhatsApp
+                    </a>
+                    <a href="mailto:contato@vendasites.com" class="footer-contact">
+                        📧 contato@vendasites.com
+                    </a>
+                    <a href="tel:+5548984217984" class="footer-contact">
+                        📱 +55 (48) 98421-7984
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Venda Sites. Todos os direitos reservados.</p>
+                <div>
+                    <a href="#" style="color: var(--muted-foreground); text-decoration: none; margin: 0 1rem;">Política de Privacidade</a>
+                    <a href="#" style="color: var(--muted-foreground); text-decoration: none; margin: 0 1rem;">Termos de Serviço</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <button class="whatsapp-button" id="whatsapp-btn" onclick="openWhatsApp()" title="Enviar mensagem via WhatsApp">
+        💬
+    </button>
+
+    <script>
+        const phoneNumber = '5548984217984';
+        const defaultMessage = 'Olá! Gostaria de saber mais sobre a criação do meu site em 48 horas.';
+
+        // Mostrar botão após 2 segundos
+        setTimeout(() => {
+            const btn = document.getElementById('whatsapp-btn');
+            if (btn) btn.style.display = 'flex';
+        }, 2000);
+
+        // Adicionar animação de pulse após 10 segundos
+        setTimeout(() => {
+            const btn = document.getElementById('whatsapp-btn');
+            if (btn) btn.classList.add('pulse');
+        }, 10000);
+
+        function getCustomMessage() {
+            const params = new URLSearchParams(window.location.search);
+            const utmSource = params.get('utm_source') || '';
+            const utmCampaign = params.get('utm_campaign') || '';
+
+            if (utmSource === 'google_ads' || utmCampaign?.includes('google')) {
+                return 'Oi! Vi seu anúncio no Google. Quero conhecer mais sobre os sites que vocês criam em 48h!';
+            } else if (utmSource === 'facebook' || utmCampaign?.includes('facebook')) {
+                return 'Olá! Vi seu anúncio no Facebook. Tenho interesse em criar um site profissional rapidamente.';
+            } else if (utmSource === 'instagram' || utmCampaign?.includes('instagram')) {
+                return 'Oi! Achei sua página no Instagram. Gostaria de saber mais sobre a criação de sites em 48h!';
+            }
+            return defaultMessage;
+        }
+
+        function openWhatsApp() {
+            const message = encodeURIComponent(getCustomMessage());
+            const url = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(url, '_blank');
+
+            // Track conversion
+            if (window.gtag) {
+                window.gtag('event', 'whatsapp_click', {
+                    phone_number: phoneNumber,
+                    message: getCustomMessage()
+                });
+            }
+        }
+
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('email-input').value;
+            
+            // Aqui você pode integrar com um serviço de email
+            console.log('Email enviado:', email);
+            
+            // Mostrar feedback
+            const btn = event.target.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Enviado! ✓';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+                document.getElementById('email-input').value = '';
+            }, 3000);
+        }
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
