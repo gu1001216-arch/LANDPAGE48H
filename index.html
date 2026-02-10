@@ -314,9 +314,21 @@
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
             margin-top: 3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .process-step {
@@ -545,56 +557,11 @@
             }
         }
 
-        /* WhatsApp Button */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 50;
-            width: 56px;
-            height: 56px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s;
-            animation: fadeIn 0.6s ease-out;
-        }
+        /* WhatsApp Button */n        .whatsapp-button {n            position: fixed;n            bottom: 1.5rem;n            right: 1.5rem;n            z-index: 50;n            width: 56px;n            height: 56px;n            background: #25d366;n            color: white;n            border: none;n            border-radius: 50%;n            cursor: pointer;n            display: flex;n            align-items: center;n            justify-content: center;n            font-size: 1.5rem;n            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);n            transition: all 0.3s;n            animation: fadeIn 0.6s ease-out;n        }
 
-        .whatsapp-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
+        .whatsapp-button:hover {n            transform: scale(1.1);n            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);n        }
 
-        .whatsapp-button.pulse {
-            animation: pulse-animation 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse-animation {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.8;
-            }
-        }
+        .whatsapp-button.pulse {n            animation: pulse-animation 1.5s ease-in-out infinite;n        }nn        @keyframes fadeIn {n            from {n                opacity: 0;n                transform: translateY(30px);n            }n            to {n                opacity: 1;n                transform: translateY(0);n            }n        }nn        @keyframes pulse-animation {n            0%, 100% {n                opacity: 1;n                transform: scale(1);n            }n            50% {n                opacity: 0.6;n                transform: scale(1.05);n            }n        }
 
         /* Animations */
         .fade-in {
@@ -751,25 +718,13 @@
             <div class="cta-content">
                 <h2>Pronto para Começar?</h2>
                 <p class="cta-subtitle">
-                    Solicite seu orçamento agora e receba uma resposta em até 2 horas. Sem compromisso.
+                    Fale com nosso time agora mesmo e receba uma resposta em até 2 horas.
                 </p>
 
-                <form onsubmit="handleEmailSubmit(event)">
-                    <div class="form-group">
-                        <input type="email" placeholder="seu@email.com" id="email-input" required>
-                        <button type="submit" class="btn btn-primary">Enviar Orçamento</button>
-                    </div>
-                    <p style="font-size: 0.875rem; color: var(--muted-foreground);">
-                        ✓ Resposta rápida • ✓ Sem spam • ✓ Orçamento personalizado
-                    </p>
-                </form>
-
-                <div class="divider">OU</div>
-
-                <button class="whatsapp-cta" onclick="openWhatsApp()">
+                <button class="whatsapp-cta" onclick="openWhatsApp()" style="margin-top: 2rem;">
                     💬 Fale Conosco no WhatsApp
                 </button>
-                <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 0.75rem;">
+                <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 1rem;">
                     Clique e converse com nosso time agora mesmo
                 </p>
 
@@ -883,25 +838,7 @@
             }
         }
 
-        function handleEmailSubmit(event) {
-            event.preventDefault();
-            const email = document.getElementById('email-input').value;
-            
-            // Aqui você pode integrar com um serviço de email
-            console.log('Email enviado:', email);
-            
-            // Mostrar feedback
-            const btn = event.target.querySelector('button');
-            const originalText = btn.textContent;
-            btn.textContent = 'Enviado! ✓';
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.disabled = false;
-                document.getElementById('email-input').value = '';
-            }, 3000);
-        }
+
 
         // Scroll suave
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
