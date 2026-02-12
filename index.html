@@ -1,328 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site profissional em 48h. A solução definitiva para prestadores de serviço e pequenos negócios.">
-    <title>DevSites 48h | Site Profissional de Alta Conversão</title>
+    <title>DevSites 48h | Seu Site Profissional Rápido</title>
+    <meta name="description" content="Tenha seu site profissional no ar em 48 horas. Ideal para prestadores de serviço e pequenos negócios.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
     <style>
-        /* --- DESIGN SYSTEM (DARK PREMIUM) --- */
         :root {
-            --bg-dark: #09090b;       
-            --bg-card: #18181b;       
-            --primary: #22c55e;       
-            --primary-glow: rgba(34, 197, 94, 0.5);
-            --text-white: #ffffff;
-            --text-gray: #a1a1aa;
-            --border: #27272a;
+            --primary: #00D084; /* Verde WhatsApp - A cor da conversão no BR */
+            --dark: #111827;
+            --light: #F3F4F6;
+            --accent: #2563EB;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-
-        /* Tipografia */
-        h1, h2, h3 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #86efac);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Layout */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         
-        /* --- HEADER --- */
-        header {
-            padding: 1.2rem 0;
-            border-bottom: 1px solid var(--border);
-            background: rgba(9, 9, 11, 0.85);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            z-index: 50;
-        }
+        body { color: var(--dark); line-height: 1.6; }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-            letter-spacing: -0.05em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .logo span { color: var(--primary); }
-
-        /* Botão Moderno do Header (Glassmorphism) */
-        .btn-modern {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-white);
-            padding: 0.6rem 1.5rem;
+        /* Botão Pulsante (CTA) */
+        .btn-cta {
+            background-color: var(--primary);
+            color: #064e3b;
+            padding: 18px 32px;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            font-weight: 800;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 14px rgba(0, 208, 132, 0.4);
+            text-transform: uppercase;
         }
+        .btn-cta:hover { transform: scale(1.05); }
+        .btn-cta i { margin-right: 8px; }
 
-        .btn-modern:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(34, 197, 94, 0.05);
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
-        }
-
-        /* --- HERO SECTION --- */
+        /* Hero Section */
         .hero {
-            padding: 180px 0 100px;
+            background: linear-gradient(rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
             text-align: center;
         }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2; }
+        .hero p { font-size: 1.1rem; color: #d1d5db; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero .tag { background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block; }
 
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
+        /* Seção de Clientes (Para quem é) */
+        .ideal-for { padding: 40px 20px; background: white; text-align: center; }
+        .ideal-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .ideal-item { background: var(--light); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+        .ideal-item i { color: var(--accent); }
 
-        /* Botão Principal (CTA) */
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            padding: 1.2rem 3rem;
-            border-radius: 8px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background: var(--primary);
-            color: #000;
-            box-shadow: 0 0 25px rgba(34, 197, 94, 0.3);
-        }
+        /* Portfólio (Crucial para confiança) */
+        .portfolio { padding: 60px 20px; background: var(--light); }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2rem; margin-bottom: 10px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .project-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .project-img { height: 200px; background-color: #ddd; background-size: cover; background-position: center; }
+        .project-info { padding: 20px; }
+        .project-info h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .project-info p { color: #6b7280; font-size: 0.9rem; }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(34, 197, 94, 0.6);
-            background: #4ade80;
-        }
+        /* Preço (Oferta Irresistível) */
+        .pricing { padding: 60px 20px; text-align: center; background: white; }
+        .price-box { border: 2px solid var(--primary); border-radius: 16px; padding: 40px 20px; max-width: 500px; margin: 0 auto; background: #f0fdf4; }
+        .old-price { text-decoration: line-through; color: #9ca3af; font-size: 1.1rem; }
+        .new-price { font-size: 3.5rem; font-weight: 800; color: var(--dark); line-height: 1; margin: 10px 0; }
+        .new-price span { font-size: 1rem; font-weight: 400; color: #6b7280; }
+        .features-list { list-style: none; text-align: left; margin: 30px 0; max-width: 300px; margin-left: auto; margin-right: auto; }
+        .features-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .features-list i { color: var(--primary); }
 
-        /* --- SEÇÕES --- */
-        .pain-points { padding: 60px 0; border-bottom: 1px solid var(--border); }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: transform 0.3s;
-        }
-        .feature-item:hover { border-color: var(--primary); transform: translateY(-5px); }
-
-        .icon-box {
-            color: var(--primary);
-            background: rgba(34, 197, 94, 0.1);
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 1.5rem;
-            display: flex;
-        }
-
-        /* --- O QUE ESTÁ INCLUSO --- */
-        .deliverables { padding: 100px 0; background: var(--bg-card); }
-        .check-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .check-list li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        
-        .check-list i { color: var(--primary); font-size: 1.4rem; }
-
-        /* --- CTA FINAL --- */
-        .cta-final { padding: 120px 0; text-align: center; }
-
-        /* --- WHATSAPP FLOAT --- */
+        /* Botão Flutuante WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 32px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            cursor: pointer;
-            z-index: 100;
-            border: none;
-            transition: transform 0.3s;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
         }
-        .whatsapp-float:hover { transform: scale(1.1); }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .new-price { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="#" class="logo">
-                <i class="ph-bold ph-code"></i> DevSites<span>48h</span>
-            </a>
-            <button onclick="openWhatsApp()" class="btn-modern">
-                Falar com Especialista <i class="ph-bold ph-caret-right"></i>
-            </button>
-        </div>
+    <header class="hero">
+        <span class="tag">Oferta por Tempo Limitado</span>
+        <h1>Seu Site Profissional <br><span style="color: var(--primary);">Pronto em 48 Horas</span></h1>
+        <p>Pare de perder clientes para a concorrência. Tenha um site moderno, rápido e que funciona no celular. Pague apenas após ver o resultado.</p>
+        <a href="https://wa.me/SEU_NUMERO_DE_WHATSAPP?text=Olá, vim pelo site e quero um orçamento." class="btn-cta">
+            <i class="fab fa-whatsapp"></i> Quero Meu Site Agora
+        </a>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;"><i class="fas fa-lock"></i> Compra 100% Segura e Garantida</p>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>
-                Seu negócio precisa vender.<br>
-                <span class="text-gradient">Você precisa de um site.</span>
-            </h1>
-            <p>
-                Não perca mais clientes para a concorrência. Tenha um site profissional pronto em 48 horas. Sem enrolação.
-            </p>
-            
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-                <button onclick="openWhatsApp()" class="btn-primary">
-                    QUERO MEU SITE AGORA
-                </button>
-                <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                    <i class="ph-fill ph-shield-check" style="color: var(--primary);"></i> Compra segura • Pagamento Único
-                </p>
-            </div>
+    <section class="ideal-for">
+        <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #6b7280;">Ideal para:</p>
+        <div class="ideal-grid">
+            <div class="ideal-item"><i class="fas fa-gavel"></i> Advogados</div>
+            <div class="ideal-item"><i class="fas fa-motorcycle"></i> Delivery</div>
+            <div class="ideal-item"><i class="fas fa-tooth"></i> Dentistas</div>
+            <div class="ideal-item"><i class="fas fa-tools"></i> Prestadores de Serviço</div>
         </div>
     </section>
 
-    <section class="pain-points">
-        <div class="container">
-            <div class="grid-3">
-                <div class="feature-item">
-                    <div class="icon-box"><i class="ph-bold ph-clock-countdown"></i></div>
-                    <div>
-                        <h3>Velocidade Recorde</h3>
-                        <p style="color: var(--text-gray); font-size: 0.95rem;">Enquanto agências pedem 20 dias, nós entregamos em 2. Seu link pronto para vender.</p>
-                    </div>
+    <section class="portfolio">
+        <div class="section-title">
+            <h2>O que nós entregamos</h2>
+            <p>Design moderno, limpo e focado em vendas.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>Landing Page de Vendas</h3>
+                    <p>Focada em conversão para produtos físicos ou info.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon-box"><i class="ph-bold ph-device-mobile-camera"></i></div>
-                    <div>
-                        <h3>Mobile First</h3>
-                        <p style="color: var(--text-gray); font-size: 0.95rem;">90% dos seus clientes acessam pelo celular. Seu site será leve, rápido e perfeito em qualquer tela.</p>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>Site Institucional</h3>
+                    <p>Para empresas passarem autoridade e confiança.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon-box"><i class="ph-bold ph-google-logo"></i></div>
-                    <div>
-                        <h3>Pronto para o Google</h3>
-                        <p style="color: var(--text-gray); font-size: 0.95rem;">Estrutura otimizada para você ser encontrado por quem está procurando seu serviço agora.</p>
-                    </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>Página de Captura</h3>
+                    <p>Ideal para captar leads e contatos de clientes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="deliverables">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1rem;">O Pacote Completo</h2>
-            <p style="text-align: center; color: var(--text-gray); margin-bottom: 3rem;">Tudo o que você precisa para parecer uma empresa grande.</p>
+    <section class="pricing">
+        <div class="section-title">
+            <h2>Investimento Acessível</h2>
+            <p>Muito mais barato que uma agência tradicional.</p>
+        </div>
+        <div class="price-box">
+            <p class="old-price">De R$ 1.500,00</p>
+            <p style="font-weight: 600;">Por Apenas:</p>
+            <div class="new-price">R$ 497<span>,00</span></div>
+            <p style="color: #6b7280; margin-bottom: 20px;">Pagamento Único (Sem mensalidade)</p>
             
-            <ul class="check-list">
-                <li><i class="ph-fill ph-check-circle"></i> Design Moderno e Exclusivo</li>
-                <li><i class="ph-fill ph-check-circle"></i> Botão de WhatsApp Inteligente</li>
-                <li><i class="ph-fill ph-check-circle"></i> Hospedagem de Alta Velocidade</li>
-                <li><i class="ph-fill ph-check-circle"></i> Certificado de Segurança (SSL)</li>
-                <li><i class="ph-fill ph-check-circle"></i> Conexão com Domínio Próprio</li>
-                <li><i class="ph-fill ph-check-circle"></i> Suporte Técnico Dedicado</li>
+            <ul class="features-list">
+                <li><i class="fas fa-check-circle"></i> Site Pronto em 48h</li>
+                <li><i class="fas fa-check-circle"></i> Design Responsivo (Celular)</li>
+                <li><i class="fas fa-check-circle"></i> Botão de WhatsApp</li>
+                <li><i class="fas fa-check-circle"></i> Hospedagem Grátis inclusa</li>
             </ul>
+
+            <a href="https://wa.me/SEU_NUMERO_DE_WHATSAPP?text=Olá, quero aproveitar a oferta de R$ 497." class="btn-cta" style="width: 100%;">
+                Garantir Oferta
+            </a>
         </div>
     </section>
 
-    <section class="cta-final">
-        <div class="container">
-            <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">Pare de adiar o seu sucesso.</h2>
-            <p style="margin-bottom: 2.5rem; color: var(--text-gray);">Sua concorrência já está online. E você?</p>
-            <button onclick="openWhatsApp()" class="btn-primary" style="padding: 1.5rem 3rem; font-size: 1.2rem;">
-                SOLICITAR ORÇAMENTO NO WHATSAPP
-            </button>
-        </div>
-    </section>
-
-    <footer style="padding: 2rem 0; text-align: center; font-size: 0.9rem; color: var(--text-gray); border-top: 1px solid var(--border);">
-        <div class="container">
-            <p>&copy; 2026 DevSites 48h. Todos os direitos reservados.</p>
-        </div>
+    <footer style="background: var(--dark); color: #9ca3af; text-align: center; padding: 40px 20px; font-size: 0.9rem;">
+        <p>&copy; 2026 DevSites 48h. Todos os direitos reservados.</p>
+        <p style="margin-top: 10px;">Feito com <i class="fas fa-bolt" style="color: var(--primary);"></i> para impulsionar negócios.</p>
     </footer>
 
-    <button class="whatsapp-float" onclick="openWhatsApp()" aria-label="Fale conosco no WhatsApp">
-        <i class="ph-fill ph-whatsapp-logo"></i>
-    </button>
+    <a href="https://wa.me/SEU_NUMERO_DE_WHATSAPP?text=Olá, preciso de ajuda com um site." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <script>
-        // Configuração do WhatsApp
-        const phoneNumber = '5548984217984'; // CONFIRME SEU NÚMERO
-        
-        function openWhatsApp() {
-            const params = new URLSearchParams(window.location.search);
-            const source = params.get('utm_source') || 'site_direto';
-            
-            let text = "Olá! Vi o site DevSites48h e tenho interesse em criar meu site.";
-            
-            if(source === 'instagram') text = "Vim pelo Instagram e quero meu site em 48h.";
-            if(source === 'google') text = "Vim pelo Google e preciso de um site profissional.";
-
-            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
-        }
-    </script>
-</body>
+    </body>
 </html>
